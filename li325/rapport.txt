@@ -1,0 +1,53 @@
+1) L'lgorithme de Glouton de fourni pas l'optimum, voici un contre exemple:
+
+Algorithme de Glouton appliqué au texte avec W = 20
+
+Inventée_par_le_____   125
+professeur_Richard__     8
+Bellman,_la_________   729
+programmation_______   343
+dynamique_permet_de_     1
+résoudre_au_moyen___    27
+d’un_ordinateur_tout     0
+problème____________  1728
+d’optimisation_dont_     1
+la_fonction_objectif     0
+se_décrit_comme_la__     8
+somme_de_fonctions__     8
+monotones___________  1331
+non-décroissantes___    27
+des_ressources._____   125
+Concrètement,_cela__     8
+signifie_que_l’on_va     0
+pouvoir_déduire_la__     8
+solution_optimale___    27
+d’un_problème_à_____   125
+partir_d’une________   512
+solution_optimale___    27
+d’un_sous_problème._     1
+On_appelle__________  1000
+algorithme_glouton__     8
+un_algorithme_qui___    27
+suit_le_principe_de_     1
+faire,_étape_par____    64
+étape,_un_choix_____   125
+optimum_local,_dans_     1
+l’espoir_d’obtenir__     8
+un_résultat_optimum_     1
+global._Dans_les_cas     0
+où_l’algorithme_ne__     8
+fournit_pas_________   729
+systématiquement_la_     1
+solution_optimale,__     8
+il_est_appelé_une___    27
+heuristique_________   729
+---------------------------
+TOTAL                 7906
+
+Le score total peut être amélioré:
+
+d’un_ordinateur_tout     0
+problème____________  1728
+
+d’un_ordinateur_____   125
+tout_problème_______   343

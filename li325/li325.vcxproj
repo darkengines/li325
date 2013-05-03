@@ -62,11 +62,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DynamicProblem.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Printer.cpp" />
+    <ClCompile Include="Problem.cpp" />
+    <ClCompile Include="Range.cpp" />
     <ClCompile Include="String.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="DynamicProblem.h" />
+    <ClInclude Include="GloutonProblem.h" />
+    <ClCompile Include="GloutonProblem.cpp">
+      <FileType>CppHeader</FileType>
+    </ClCompile>
+    <ClInclude Include="Printer.h" />
+    <ClInclude Include="Problem.h" />
+    <ClInclude Include="Range.h" />
     <ClInclude Include="String.h" />
+    <ClInclude Include="TList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
