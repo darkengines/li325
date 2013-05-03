@@ -13,7 +13,7 @@ protected:
 	const int wordCount;
 	int badness(const Range&) const;
 public:
-	Problem(const int, const String*, const int,  const int);
+	Problem(int, const String*, int,  int);
 	Problem(const Problem&);
 	~Problem();
 	virtual TList<Range>& Solve() const = 0;

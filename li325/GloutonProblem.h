@@ -5,7 +5,7 @@
 
 class GloutonProblem: public Problem {
 public:
-	GloutonProblem(const int, const String*, const int, const int);
+	GloutonProblem(int, const String*, int, int);
 	GloutonProblem(const GloutonProblem&);
 	~GloutonProblem();
 	virtual TList<Range>& Solve() const;

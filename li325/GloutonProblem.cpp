@@ -1,6 +1,6 @@
 #include "GloutonProblem.h"
 
-GloutonProblem::GloutonProblem(int lineLength, const String* words, const int wordCount, const int power): Problem(lineLength, words, wordCount, power) {
+GloutonProblem::GloutonProblem(int lineLength, const String* words, int wordCount, int power): Problem(lineLength, words, wordCount, power) {
 }
 GloutonProblem::GloutonProblem(const GloutonProblem& src): Problem(src) {
 }

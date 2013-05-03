@@ -10,12 +10,16 @@
     <ClCompile Include="Problem.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Range.cpp" />
     <ClCompile Include="GloutonProblem.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="Printer.cpp" />
     <ClCompile Include="DynamicProblem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Printer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Range.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

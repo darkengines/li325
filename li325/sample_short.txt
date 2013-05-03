@@ -1,0 +1,1 @@
+Inventée par le professeur Richard Bellman, la programmation dynamique permet de résoudre au moyen d’un ordinateur
