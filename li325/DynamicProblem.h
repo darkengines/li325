@@ -11,7 +11,7 @@ public:
 	virtual TList<Range>& Solve() const;
 protected:
 	int* dp;
-	int DP(int, TList<Range>) const;
+	int DP(int, int*) const;
 };
 
 #endif

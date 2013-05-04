@@ -12,5 +12,16 @@ int Problem::badness(const Range& range) const {
 	for (i=range.left;i<=range.right;i++) {
 		result -= words[i].getLength();
 	}
-	return result < 0 ? 9999999 : result;
+	if (result < 0) {
+		return 99999;
+	} else {
+		int tmp = result;
+		int i = power-1;
+		if (i) {
+			while (i--) {
+				result *= tmp;
+			}
+		}
+		return result;
+	}
 }

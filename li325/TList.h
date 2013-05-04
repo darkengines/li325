@@ -75,9 +75,8 @@ public:
 		TListItem<T>* item = new TListItem<T>(rtItem, 0);
 		if (_head) {
 			item->SetNext(_head);
-		} else {
-			_head = item;
 		}
+		_head = item;
 		_length++;
 	}
 	void AppendTail(const T& rtItem) {
