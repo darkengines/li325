@@ -13,7 +13,7 @@ int Problem::badness(const Range& range) const {
 		result -= words[i].getLength();
 	}
 	if (result < 0) {
-		return 99999;
+		return -1;
 	} else {
 		int tmp = result;
 		int i = power-1;

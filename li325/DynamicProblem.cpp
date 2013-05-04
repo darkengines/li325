@@ -18,17 +18,13 @@ TList<Range>& DynamicProblem::Solve() const {
 	int result = DP(0, parents);
 	int i = 0;
 	while (i < wordCount-1) {
-		steps->AppendTail(*(new Range(i, parents[i]-1)));
-		i = parents[i];
+		steps->AppendTail(*(new Range(i, parents[i])));
+		i = parents[i]+1;
 	}
-	steps->AppendTail(*(new Range(i, parents[i]-1)));
 	return *steps;
 }
 int DynamicProblem::DP(int index, int* parents) const {
-	int argmin;
-	int tmp = 0;
-	if (index >= wordCount-1) {
-		parents[index] = index+1;
+	if (index >= wordCount) {
 		return 0;
 	}
 	int i = index;
@@ -39,19 +35,21 @@ int DynamicProblem::DP(int index, int* parents) const {
 		i++;
 	}
 	length = i-1-index;
-	argmin = index;
+	parents[index] = index+1;
 	int min = badness(Range(index, index));
-	for (int i = index+1; i <= index+length; i++) {
-		if (dp[i+1]<0) {
-			dp[i+1] = DP(i+1, parents);			
+	for (i = index+1; i <= index+length; i++) {
+		if (dp[i]<0) {
+			dp[i] = DP(i, parents);			
 		}
-		
-		tmp = badness(Range(index, i))+ dp[i+1] ;
-		if (tmp < min) {
-			argmin = i;
-			min = tmp;
+		int b = badness(Range(index, i));
+		int c = dp[i];
+		if (b >= 0 && c >= 0) {
+			int tmp = b + c;
+			if (tmp < min) {
+				parents[index] = i;
+				min = tmp;
+			}
 		}
 	}
-	parents[index] = argmin + 1;
 	return min;
 }
