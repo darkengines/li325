@@ -10,7 +10,6 @@ DynamicProblem::DynamicProblem(int lineLength, const String* words, int wordCoun
 DynamicProblem::DynamicProblem(const DynamicProblem& src): Problem(src) {
 }
 DynamicProblem::~DynamicProblem() {
-	Problem::~Problem();
 }
 TList<Range>& DynamicProblem::Solve() const {
 	int* parents = new int[wordCount];
@@ -21,10 +20,12 @@ TList<Range>& DynamicProblem::Solve() const {
 		steps->AppendTail(*(new Range(i, parents[i])));
 		i = parents[i]+1;
 	}
+	steps->AppendTail(*(new Range(i, parents[i])));
 	return *steps;
 }
 int DynamicProblem::DP(int index, int* parents) const {
-	if (index >= wordCount) {
+	if (index >= wordCount-1) {
+		parents[index] = index;
 		return 0;
 	}
 	int i = index;
@@ -35,17 +36,16 @@ int DynamicProblem::DP(int index, int* parents) const {
 		i++;
 	}
 	length = i-1-index;
-	parents[index] = index+1;
-	int min = badness(Range(index, index));
-	for (i = index+1; i <= index+length; i++) {
-		if (dp[i]<0) {
-			dp[i] = DP(i, parents);			
+	int min = -1;
+	for (i = index; i <= wordCount; i++) {
+		if (dp[i+1]<0) {
+			dp[i+1] = DP(i+1, parents);	
 		}
 		int b = badness(Range(index, i));
-		int c = dp[i];
+		int c = dp[i+1];
 		if (b >= 0 && c >= 0) {
 			int tmp = b + c;
-			if (tmp < min) {
+			if (min < 0 || tmp < min) {
 				parents[index] = i;
 				min = tmp;
 			}

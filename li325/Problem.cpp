@@ -4,8 +4,6 @@ Problem::Problem(int lineLength, const String* words, int wordCount, int power):
 }
 Problem::Problem(const Problem& src): lineLength(src.lineLength), words(src.words), wordCount(src.wordCount), power(src.power) {
 }
-Problem::~Problem() {
-}
 int Problem::badness(const Range& range) const {
 	int result = lineLength - range.right + range.left;
 	int i;

@@ -15,7 +15,6 @@ protected:
 public:
 	Problem(int, const String*, int,  int);
 	Problem(const Problem&);
-	~Problem();
 	virtual TList<Range>& Solve() const = 0;
 };
 

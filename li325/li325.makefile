@@ -91,7 +91,7 @@ gccRelease/DynamicProblem.o: DynamicProblem.cpp
 # Compiles file main.cpp for the Release configuration...
 -include gccRelease/main.d
 gccRelease/main.o: main.cpp
-	$(CPP_COMPILER) $(Release_Preprocessor_Definitions) $(Release_Compiler_Flags) -c main.cpp $(Release_Include_Path) -o gccRelease/main.o
+	$(CPP_COMPILER) $(Release_Preprocessor_Definitions) $(Release_Compiler_Flags) -o li325 -c main.cpp $(Release_Include_Path) -o gccRelease/main.o
 	$(CPP_COMPILER) $(Release_Preprocessor_Definitions) $(Release_Compiler_Flags) -MM main.cpp $(Release_Include_Path) > gccRelease/main.d
 
 # Compiles file Printer.cpp for the Release configuration...

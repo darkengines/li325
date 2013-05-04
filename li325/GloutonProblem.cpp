@@ -5,7 +5,6 @@ GloutonProblem::GloutonProblem(int lineLength, const String* words, int wordCoun
 GloutonProblem::GloutonProblem(const GloutonProblem& src): Problem(src) {
 }
 GloutonProblem::~GloutonProblem() {
-	Problem::~Problem();
 }
 TList<Range>& GloutonProblem::Solve() const {
 	int i = 0;

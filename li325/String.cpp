@@ -89,10 +89,11 @@ void String::load(const char* src) {
 		delete[] string;
 		string = 0;
 	}
+	char c;
 	FILE* file = fopen(src, "r");
 	if (file) {
 		int count = 1;
-		while (fgetc(file) != EOF) {
+		while ((c = fgetc(file)) != EOF && c != '\n') {
 			count++;
 		}
 		if (count > 1) {
@@ -102,8 +103,7 @@ void String::load(const char* src) {
 			string = new char[count];
 			string[count-1] = '\0';
 			int count = 0;
-			char c;
-			while ((c=fgetc(file)) != EOF) {
+			while ((c=fgetc(file)) != EOF && c != '\n') {
 				string[count] = c;
 				count++;
 			}
