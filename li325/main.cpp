@@ -6,17 +6,25 @@
 
 int main(int argc, char** argv) {
 	
-	FILE* file = fopen("out.txt", "w");
+	char* inputFilename = argv[1];
+	char* outputFilename = argv[2];
 	
-	String a;
-	a.load("sample.txt");
+	String text;
+	
+	//Loading input text
+	text.load(inputFilename);
+	
 	String* words;
 	int length = 0;
-
-	a.split(' ', &length, &words);
+	
+	//Spliting input text in word array
+	text.split(' ', &length, &words);
+	
+	//Setting problems
 	GloutonProblem gpb1(20, words, length, 1);
 	GloutonProblem gpb2(20, words, length, 2);
 	GloutonProblem gpb3(20, words, length, 3);
+	
 	DynamicProblem dpb1(20, words, length, 1);
 	DynamicProblem dpb2(20, words, length, 2);
 	DynamicProblem dpb3(20, words, length, 3);
@@ -24,10 +32,14 @@ int main(int argc, char** argv) {
 	GloutonProblem gpb4(50, words, length, 1);
 	GloutonProblem gpb5(50, words, length, 2);
 	GloutonProblem gpb6(50, words, length, 3);
+	
 	DynamicProblem dpb4(50, words, length, 1);
 	DynamicProblem dpb5(50, words, length, 2);
 	DynamicProblem dpb6(50, words, length, 3);
 	
+	FILE* file = fopen(outputFilename, "w");
+	
+	//Solving problems and display results
 	fprintf(file, "Glouton Problem W=20 Power=1\n\n");
 	TList<Range> solution = gpb1.Solve();
 	Printer::print(file, 20, words, solution, 1);

@@ -22,7 +22,7 @@ void Printer::print(FILE* out, int lineLength, String* words, TList<Range> instr
 		j = 0;
 		int score = 0;
 		if (cursor->GetNext()) {
-			score = getRangeScore(lineLength, words, range, power);
+			score = getBadness(lineLength, words, range, power);
 		}
 		totalScore += score;
 		while (i <= range.right) {
@@ -56,7 +56,7 @@ void Printer::print(FILE* out, int lineLength, String* words, TList<Range> instr
 	}
 	fprintf(out, "%5d\n", totalScore);
 }
-int Printer::getRangeScore(int lineLength, String* words, Range range, int power) {
+int Printer::getBadness(int lineLength, String* words, Range range, int power) {
 	int i = range.left;
 	int j = range.right;
 	int result = lineLength - j + i;
